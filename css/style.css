@@ -1,0 +1,103 @@
+/* selktor uinwersalny lapie wszystkie elmenty na stronie*/
+* 
+{
+    font-size: 22px;
+} 
+
+body
+{
+    margin: 0;
+}
+/* selktor znacznika łapie wszystkie okreslone znaczniki na stronie */
+
+p
+{
+    font-size: 16px;
+}
+/* selektor indentyfikatora lapie element o okreslonym atrybucie id*/
+#universal
+{
+    background-color: grey;
+}
+
+/* sleketor klasy lapie elementy o okreslonej atrybucie klasy*/
+
+.class-selector 
+{
+    background-color: greenyellow;
+}
+/*mozemy laczyc selektor indentyfikatora z selektorem klasy*/
+
+#universal.blue
+{
+    background-color: blue;
+}
+
+/* selektor bezposredniego potomka lapie elementy zagniezdzone bezposrednio w elemencie */
+
+.potomek > p
+{
+    font-size: 30px;
+    text-align: center;
+}
+/* selektor potomla (ze spacja) lapie wszystkie zagniezdzone elemnty */
+.potomek p
+{
+    font-size: 20px;
+}
+
+/*selektor bezposredniego rodzenstwa(znak+) lapie pierwsze wystapienie selektora na tym samym poziomie zagniezdzenia*/
+.bezposrednie-rodzenstwo h2 + p
+{
+    color: violet;
+}
+
+/*selektor rodzenstwa(znak ~) zlapie wszystkie wystapienia selktora na tym samym poziomie zagniezdzenia*/
+.bezposrednie-rodzenstwo h2 ~ p
+{
+    color: red;
+}
+/*pozycjonowanie lementu*/
+#pozycjonowanie
+{
+    height: 400px;
+    background-color: green;
+    position: relative;
+}
+/*pozycja relatywna zachowuje miejsce elementu, odsówa element od elementu nadrzednego */
+
+/* element pozycjonowania absolutnie uustawia sie wzgledem elementu nadrzednego ktory jest pozycjonowany relatywnie. jezeli element nadrzedny nie jest pozycjoni=owany relatywnie to zawsze bedzie ustawial sie absolutnie wzgledem elementu body dodatkowo, element pozycjonowany absolutnie nie zachowuje miejsca*/
+
+/* jezeli zmienimu elementowi blokowemu wlasciwosc position na absolute lub fixed, to musimy pamietac o tym, aby taki blok rozciagnac ponownie na 100% szerokosci*/
+#pozycjonowanie .red
+{
+    background-color: red;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+#pozycjonowanie .blue
+{
+    background-color: blue;
+}
+
+#pozycjonowanie .inner p
+{
+    margin: 0;
+    color: white;
+}
+/*jezeli ustawiamy pozycje fixed, to ustawiamy elemnt wzgledem okna przegladark, dodatkowo nalezy pamietac, aby ustawic top; 0 i left; 0 (przykleic do gornego i lewego boku okna przegladarki)*/
+#main-nav
+{
+    background-color: aquamarine;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+#main-nav ul
+{
+    margin: 0;
+}
